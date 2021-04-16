@@ -16,7 +16,7 @@
             <td>{{ $recette->title }}</td>
             <td>{{ $recette->autor->name }}</td>
             {{-- <td><a class="button" href="{{url('edit' , $recette->id) }}">Editer</a>  <a class="button" href="{{url('delete' , $recette->id) }}">Suprimer</a></td> --}}
-            <td><a class="button" href="{{url('admin/edit' , $recette->id) }}">Editer</a>  <a class="button" href="{{url('admin/delete' , $recette->id) }}">Suprimer</a></td>
+            <td><a class="button" href="{{url('adminedit' , $recette->id) }}">Editer</a>  <a class="button" href="{{url('admin/delete' , $recette->id) }}">Suprimer</a></td>
         </tr>
     @endforeach
   </table>

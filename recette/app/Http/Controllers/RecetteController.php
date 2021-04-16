@@ -96,6 +96,8 @@ class RecetteController extends Controller
     {
         //
         $recipes = \App\Models\Recipe::where('url', $id)->first(); //get first recipe with recipe_nam == $recipe_name
+        /* print_r($recipes);
+        die; */
         return view('/layouts.show', array( //Pass the recipe to the view
             'recipes' => $recipes
         ));
@@ -112,17 +114,16 @@ class RecetteController extends Controller
     public function edit($id)
     {
         //return view('/admin/edit',compact('id'));
-        $recettes = \App\Models\Recipe::where('url', $id)->first(); //get first recipe with recipe_nam == $recipe_name
-        return view('/admin/edit', array( //Pass the recipe to the view
+        $recettes = \App\Models\Recipe::where('id', $id)->first(); //get first recipe with recipe_nam == $recipe_name
+        /* print_r($recettes);
+        die; */
+        return view('/admin.edit', array( //Pass the recipe to the view
             'recettes' => $recettes
         ));
     }
 
-    public function read() //$id
+    public function read() //$pour faire apparaitre la liste des recettes avec les boutons
     {
-        //
-        //return redirect('/admin/edit', array('recettes' => $recettes));
-        //return view('/admin/edit');
         $recettes = \App\Models\Recipe::all();
         return view('/admin/read', array('recettes' => $recettes));
     }

@@ -29,6 +29,7 @@ Route::get('/recette', [RecetteController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 
 Route::get('/recettes/{url}',[RecetteController::class, 'show']);
+
 Route::get('admin/edit/{url}',[RecetteController::class, 'edit']);
 Route::get('admin/delete/{url}',[RecetteController::class, 'delete']);
 
@@ -45,5 +46,6 @@ Route::resource('admin', RecetteController::class);
 }); */
 
 Route::get('/adminread', [RecetteController::class, 'read']);
+Route::get('/adminedit/{url}', [RecetteController::class, 'edit']);
 
 
